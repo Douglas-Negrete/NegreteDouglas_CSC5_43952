@@ -13,6 +13,7 @@ using namespace std;
 //global constants
 const float G=3.2174e1f;//acceleration in ft?sec^s
 const float CNVFTMT=3.048e-1f;//conversion from feet to meters
+//The 'f' at the end of the two statements changes them to a float
 
 //function prototypes
 
