@@ -25,6 +25,7 @@ int main(int argc, char** argv) {
     cout<<"Input the time to drop x.xx(seconds)"<<endl;
     cin>>time;
     //calculate the distance
+    //dstnce = 1/2*G*time*time;//This Does Not Work!
     //dstnce = static_cast<float>(1)/2*G*time*time;
     //dstnce = 1.0f/2*G*time*time;
     //dstnce = 1/2.0f*G*time*time;
