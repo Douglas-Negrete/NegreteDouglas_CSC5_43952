@@ -18,17 +18,20 @@ using namespace std;
 //execution begins here
 int main(int argc, char** argv) {
     
-    float a,b,sum;
+    float sugar,butter,flour,ckie;
     
-    cout<<"Please input the number of females, and males in a class. "
-            "ex: '20 19'(note, the number of females should be first)"<<endl;
-    cin>>a>>b;
-    sum+=a+b;
-    a=a/sum;
-    b=b/sum;
-    cout<<fixed<<setprecision(0)<<showpoint;
-    cout<<"The percentage of females in the class is "<<a*100<<"%"<<endl;
-    cout<<"The percentage of males in the class is "<<b*100<<"%"<<endl;
+    cout<<"Please input the number of cookies you would like to make"<<endl;
+    cin>>ckie;
+    sugar=(1.5/48)*ckie;
+    butter=(1.0/48)*ckie;
+    flour=(2.75/48)*ckie;
+    cout<<fixed<<setprecision(2)<<showpoint;
+    cout<<"To make that many cookies you will need "<<sugar<<" "
+            "cups of sugar"<<endl;
+    cout<<"To make that many cookies you will need "<<butter<<" "
+            "cups of butter"<<endl;
+    cout<<"To make that many cookies you will need "<<flour<<" "
+            "cups of flour"<<endl;
         
     
     return 0;
