@@ -207,8 +207,8 @@ int main(int argc, char** argv) {
                 case 'x':{
                     cout<<"\nThe (a)first problem gives you the sum of an "
                             "inputed number."<<endl;
-                    cout<<"\nThe (b)second problem gives you a roman numeral "
-                            "for 1-10."<<endl;
+                    cout<<"\nThe (b)second problem calculates the ocean level "
+                            "after x years"<<endl;
                     cout<<"\nThe (c)third problem decides if a calendar date "
                             "is magic."<<endl;
                     cout<<"\nThe (d)fourth problem decides which of two "
