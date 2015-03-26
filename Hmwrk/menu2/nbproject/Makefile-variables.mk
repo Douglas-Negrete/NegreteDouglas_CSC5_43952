@@ -9,19 +9,19 @@ CND_DISTDIR=dist
 # Debug configuration
 CND_PLATFORM_Debug=GNU-Linux-x86
 CND_ARTIFACT_DIR_Debug=dist/Debug/GNU-Linux-x86
-CND_ARTIFACT_NAME_Debug=menu
-CND_ARTIFACT_PATH_Debug=dist/Debug/GNU-Linux-x86/menu
+CND_ARTIFACT_NAME_Debug=menu2
+CND_ARTIFACT_PATH_Debug=dist/Debug/GNU-Linux-x86/menu2
 CND_PACKAGE_DIR_Debug=dist/Debug/GNU-Linux-x86/package
-CND_PACKAGE_NAME_Debug=menu.tar
-CND_PACKAGE_PATH_Debug=dist/Debug/GNU-Linux-x86/package/menu.tar
+CND_PACKAGE_NAME_Debug=menu2.tar
+CND_PACKAGE_PATH_Debug=dist/Debug/GNU-Linux-x86/package/menu2.tar
 # Release configuration
-CND_PLATFORM_Release=Cygwin_4.x-Windows
-CND_ARTIFACT_DIR_Release=dist/Release/Cygwin_4.x-Windows
-CND_ARTIFACT_NAME_Release=menu
-CND_ARTIFACT_PATH_Release=dist/Release/Cygwin_4.x-Windows/menu
-CND_PACKAGE_DIR_Release=dist/Release/Cygwin_4.x-Windows/package
-CND_PACKAGE_NAME_Release=menu.tar
-CND_PACKAGE_PATH_Release=dist/Release/Cygwin_4.x-Windows/package/menu.tar
+CND_PLATFORM_Release=GNU-Linux-x86
+CND_ARTIFACT_DIR_Release=dist/Release/GNU-Linux-x86
+CND_ARTIFACT_NAME_Release=menu2
+CND_ARTIFACT_PATH_Release=dist/Release/GNU-Linux-x86/menu2
+CND_PACKAGE_DIR_Release=dist/Release/GNU-Linux-x86/package
+CND_PACKAGE_NAME_Release=menu2.tar
+CND_PACKAGE_PATH_Release=dist/Release/GNU-Linux-x86/package/menu2.tar
 #
 # include compiler specific variables
 #
