@@ -27,6 +27,7 @@ int main(int argc, char** argv) {
         //cout<<"\n"<<endl;
         //Solve a problem that has been chosen.
         switch(choice){
+            case 'A':
                 case 'a':{
                     float one,ans;
                     cout<<"\nPlease enter a number:"<<endl;
@@ -41,6 +42,7 @@ int main(int argc, char** argv) {
                         cout<<"The number is invalid\n"<<endl;
                     break;
                 }
+            case 'B':
                 case 'b':{
                     float num,ocean;
                     cout<<"\nPlease enter a number of years: "<<endl;
@@ -50,6 +52,7 @@ int main(int argc, char** argv) {
                             <<ocean<<" millimeters.\n"<<endl;
                     break;
                 }
+            case 'C':
                 case 'c':{
                     for(int i=5;i<=30;i++){
                         if(i%5==0){
@@ -60,6 +63,7 @@ int main(int argc, char** argv) {
                     cout<<endl;
                     break;
                 }
+            case 'D':
                 case 'd':{
                     float price=2500;
                     for(int i=1;i<=6;i++){
@@ -69,6 +73,7 @@ int main(int argc, char** argv) {
                     }
                     break;
                 }
+            case 'E':
                 case 'e':{
                     float speed,time;
                     cout<<"How fast is your car moving?(mph)"<<endl;
@@ -83,139 +88,260 @@ int main(int argc, char** argv) {
                     
                     break;
                 }
+            case 'F':
                 case 'f':{
-                    float mass,newtons;
-                    cout<<"\nPlease enter the mass of an object:\n"<<endl;
-                    cin>>mass;
-                    newtons=mass*9.8;
-                    cout<<newtons<<" newtons"<<endl;
-                    if(newtons>1000)
-                        cout<<"The object is too heavy.\n"<<endl;
-                    else if(newtons<10)
-                        cout<<"The object is too light.\n"<<endl;
+                    float days=0, total=0;
+                    cout<<"\nPlease enter the number of days in a pay period:"
+                            "\n"<<endl;
+                    cin>>days;
+                    cout<<"Day's Salary    Total Salary\n~~~~~~~~~~~~~~~~~~~~~~"
+                            "~~~~~~~~"<<endl;
+                    cout << setprecision(2) << fixed;
+                    for(int i= 1; i<=days; i++){
+                        total+=i;
+                        cout<<"      "<<i/100.0<<"         "<<total/100.0<<endl;
+                    }
                     break;
                 }
+            case 'G':
                 case 'g':{
                    float seconds;
-                    cout<<"\nPlease enter the number of seconds:"<<endl;
-                    cin>>seconds;
-                    if(seconds>=86400)
-                        cout<<seconds/86400.0<<" day(s)\n"<<endl;
-                    else if(seconds>=3600)
-                        cout<<seconds/3600.0<<" hour(s)\n"<<endl;
-                    else if(seconds>=60)
-                        cout<<seconds/60.0<<" minute(s)\n"<<endl;
-                    else
-                        cout<<seconds<<" second(s)\n"<<endl;
+                   char nChoice;
+                    cout<<"\nPlease enter a choice:"<<endl;
+                    cout<<" a)Addition"<<endl;
+                    cout<<" b)Subtraction"<<endl;
+                    cout<<" c)Multiplication"<<endl;
+                    cout<<" d)Division"<<endl;
+                    cin>>nChoice;
+                    switch(nChoice){
+                        case 'A':
+                        case 'a':{//addition problem
+                            unsigned seed = time(0);//gets the system time
+                            srand(seed);//seed the random number generator
+
+                            short num1, num2, min, max, sum, ans;
+                            min = 100;
+                            max = 999;
+
+                            num1 = (rand()%(max-min+1))+min;
+                            num2 = (rand()%(max-min+1))+min;
+
+                            cout<<"\nwhat is "<<num1<<"\n       +"<<num2<<endl;
+
+                            sum=num1+num2;
+                            cout<<"\nWhat is the answer?"<<endl;
+                            cin>>ans;
+
+                            if (cin.get() == '\n')
+                                if(ans==sum)
+                                    cout<<"\nYou got it right!\n"<<endl;
+                                else
+                                    cout<<"\nSorry, that's not right, it's "
+                                            <<sum<<"\n"<<endl;
+                            break;
+                        }
+                        case 'B':
+                        case 'b':{//subtraction
+                            unsigned seed = time(0);//gets the system time
+                            srand(seed);//seed the random number generator
+
+                            short num1, num2, min, max, sum, ans;
+                            bool l=true;
+                            min = 100;
+                            max = 999;
+
+                            do{
+                            num1 = (rand()%(max-min+1))+min;
+                            num2 = (rand()%(max-min+1))+min;
+                            if(num1>num2)
+                                l=false;
+                            }while(l);
+
+                            cout<<"\nwhat is "<<num1<<"\n       -"<<num2<<endl;
+
+                            sum=num1-num2;
+                            cout<<"\nWhat is the answer?"<<endl;
+                            cin>>ans;
+
+                            if (cin.get() == '\n')
+                                if(ans==sum)
+                                    cout<<"\nYou got it right!\n"<<endl;
+                                else
+                                    cout<<"\nSorry, that's not right, it's "
+                                            <<sum<<"\n"<<endl;
+                            break;
+                        }
+                        case 'C':
+                        case 'c':{//multiplication
+                            unsigned seed = time(0);//gets the system time
+                            srand(seed);//seed the random number generator
+
+                            short num1, num2, min, max, sum, ans;
+                            bool l=true;
+                            min = 1;
+                            max = 180;
+
+                            num1 = (rand()%(max-min+1))+min;
+                            num2 = (rand()%(max-min+1))+min;
+
+                            cout<<"\nwhat is "<<num1<<" * "<<num2<<endl;
+
+                            sum=num1*num2;
+                            cout<<"\nWhat is the answer?"<<endl;
+                            cin>>ans;
+
+                            if (cin.get() == '\n')
+                                if(ans==sum)
+                                    cout<<"\nYou got it right!\n"<<endl;
+                                else
+                                    cout<<"\nSorry, that's not right, it's "
+                                            <<sum<<"\n"<<endl;
+                            break;
+                        }
+                        case 'D':
+                        case 'd':{//subtraction
+                            unsigned seed = time(0);//gets the system time
+                            srand(seed);//seed the random number generator
+
+                            short num1, num2, min, max, sum, ans;
+                            bool l=true;
+                            min = 1;
+                            max = 999;
+
+                            do{
+                            num1 = (rand()%(max-min+1))+min;
+                            num2 = (rand()%(max-min+1))+min;
+                            if((num1>num2)&&(num1%num2==0))
+                                l=false;
+                            }while(l);
+
+                            cout<<"\nwhat is "<<num1<<" / "<<num2<<endl;
+
+                            sum=num1/num2;
+                            cout<<"\nWhat is the answer?"<<endl;
+                            cin>>ans;
+
+                            if (cin.get() == '\n')
+                                if(ans==sum)
+                                    cout<<"\nYou got it right!\n"<<endl;
+                                else
+                                    cout<<"\nSorry, that's not right, it's "
+                                            <<sum<<"\n"<<endl;
+                            break;
+                        }
+                        default:{
+                        cout<<"\nYou entered a wrong choice.\n"<<endl;
+                        break;
+                        }
+                    }
                     break;
                 }
+            case 'H':
                 case 'h':{
                     unsigned seed = time(0);//gets the system time
                     srand(seed);//seed the random number generator
     
-                    short num1, num2, min, max, sum, ans;
+                    short min, max, ans, guess;
+                    bool l=true;
                     min = 100;
                     max = 999;
 
-                    num1 = (rand()%(max-min+1))+min;
-                    num2 = (rand()%(max-min+1))+min;
+                    ans = (rand()%(max-min+1))+min;
 
-                    cout<<"\nwhat is "<<num1<<"\n       +"<<num2<<endl;
-
-                    sum=num1+num2;
-                    cout<<"\nWhat is the answer?"<<endl;
-                    cin>>ans;
-
-                    if (cin.get() == '\n')
-                        if(ans==sum)
-                            cout<<"\nYou got it right!\n"<<endl;
-                        else
-                            cout<<"\nSorry, that's not right, it's "
-                                    <<sum<<"\n"<<endl;
-                    
+                    do{
+                        
+                        cout<<"\nGuess the number"<<endl;
+                        cin>>guess;
+                        if(guess>ans)
+                            cout<<"\nToo high!"<<endl;
+                        else if(guess<ans)
+                            cout<<"\nToo low!"<<endl;
+                        else{
+                            cout<<"\nThat's it!\n"<<endl;
+                            l=false;
+                        }
+                        
+                    }while(l);
                     break;    
                 }
+            case 'I':
                 case 'i':{
-                    float num;
-                    cout<<"\nPlease enter the number of packages sold:"<<endl;
-                    cin>>num;
-                    if(num>0)
-                        if(num>=100)
-                            cout<<"\nThe cost is "<<(num*99)*.5<<"\n"<<endl;
-                        else if(num>=50 && num<=99)
-                            cout<<"\nThe cost is "<<(num*99)*.4<<"\n"<<endl;
-                        else if(num>=20 && num<=49)
-                            cout<<"\nThe cost is "<<(num*99)*.3<<"\n"<<endl;
-                        else if(num>=10 && num<=19)
-                            cout<<"\nThe cost is "<<(num*99)*.2<<"\n"<<endl;
-                        else
-                            cout<<"\nThe cost is "<<(num*99)<<"\n"<<endl;
-                    else
-                        cout<<"The number must be larger than 0."<<endl;
-                    break;
+                    unsigned seed = time(0);//gets the system time
+                    srand(seed);//seed the random number generator
+    
+                    short min, max, ans, guess,gCount=1;
+                    bool l=true;
+                    min = 1;
+                    max = 999;
+
+                    ans = (rand()%(max-min+1))+min;
+
+                    do{
+                        
+                        cout<<"\nGuess the number:"<<endl;
+                        cin>>guess;
+                        if(guess>ans){
+                            cout<<"\nToo high!"<<endl;
+                            gCount++;
+                        }else if(guess<ans){
+                            cout<<"\nToo low!"<<endl;
+                            gCount++;
+                        }else{
+                            cout<<"\nThat's it!, you guessed: "<<gCount
+                                    <<" time(s)\n"<<endl;
+                            l=false;
+                        }
+                        
+                    }while(l);
+                    break; 
                 }
+            case 'J':
                 case 'j':{
-                    float books;
-                    cout<<"\nPlease enter the number of books bought:"<<endl;
-                    cin>>books;
-                    if(books>=0)
-                        if(books>=4)
-                            cout<<"\nThe points awarded is 60\n"<<endl;
-                        else if(books>=3)
-                            cout<<"\nThe points awarded is 30\n"<<endl;
-                        else if(books>=2)
-                            cout<<"\nThe points awarded is 15\n"<<endl;
-                        else if(books>=1)
-                            cout<<"\nThe points awarded is 5\n"<<endl;
-                        else
-                            cout<<"\nThere are no points awarded\n"<<endl;
-                    else
-                        cout<<"You can't buy a negative number of books."<<endl;
+                    float square;
+                    cout<<"\nPlease enter the size of the square(1-15):"<<endl;
+                    cin>>square;
+                    for(int i = 1; i <= square; i++)
+                    {
+                        //cout<<"x"<<endl;
+                        cout<<endl;
+                        for(int j = 1; j <= square; j++)
+                            cout<<"x";
+                        
+                    }
+                    cout<<"\n"<<endl;
                     break;
                 }
+            case 'K':
                 case 'k':{
-                    float weight,dstnce,chrgs;
-                    cout<<"\nPlease enter the weight of the object in kg, "
-                            "then the distance to be shipped:"<<endl;
-                    cin>>weight>>dstnce;
-                    if((weight<0||weight>20)||(dstnce<10||dstnce>3000))
-                        cout<<"The item can not be shipped.\n"<<endl;
-                    else if(weight<=2)
-                        if(dstnce<=500)
-                            chrgs=1.10;
-                        else
-                            chrgs = ((static_cast<int>(dstnce)/500)*1.10)+1.10;
-                    else if(weight<=6)
-                        if(dstnce<=500)
-                            chrgs=2.20;
-                        else
-                            chrgs = ((static_cast<int>(dstnce)/500)*2.20)+2.20;
-                    else if(weight<=10)
-                        if(dstnce<=500)
-                            chrgs=3.75;
-                        else
-                            chrgs = ((static_cast<int>(dstnce)/500)*3.75)+3.75;
-                    else if(weight<=20)
-                        if(dstnce<=500)
-                            chrgs=4.80;
-                        else
-                            chrgs = ((static_cast<int>(dstnce)/500)*4.80)+4.80;
-                    cout<<fixed<<setprecision(2)<<showpoint;
-                    cout<<"The total charges are "<<chrgs<<"\n"<<endl;
+                    float floors,room,occupy,tRoom,tOccupy;
+                    cout<<"How many floors does the hotel have?"<<endl;
+                    cin>>floors;
+                    for(int i = 1; i <=floors; i++){
+                        cout<<"How many rooms are there?, and how many of those"
+                                " rooms are occupied?"<<endl;
+                        cin>>tRoom>>tOccupy;
+                        room+=tRoom;
+                        occupy+=tOccupy;
+                    }
+                    cout<<"The hotel has "<<room<<" room(s)."<<endl;
+                    cout<<"The hotel has "<<occupy<<" occupied room(s)."<<endl;
+                    cout<<"The hotel has "<<room-occupy<<" empty room(s)."<<endl;
+                    cout<<"The hotel is "<<(occupy/room)*100<<"% full."<<endl;
                     break;
                 }
+            case 'X':
                 case 'x':{
                     cout<<"\nThe (a)first problem gives you the sum of an "
                             "inputed number."<<endl;
                     cout<<"\nThe (b)second problem calculates the ocean level "
                             "after x years"<<endl;
-                    cout<<"\nThe (c)third problem decides if a calendar date "
-                            "is magic."<<endl;
-                    cout<<"\nThe (d)fourth problem decides which of two "
-                            "rectangles is larger."<<endl;
-                    cout<<"\nThe (e)fifth problem calculates your BMI."<<endl;
-                    cout<<"\nThe (f)sixth problem calculates newtons from "
-                            "mass."<<endl;
+                    cout<<"\nThe (c)third problem calculates calories"<<endl;
+                    cout<<"\nThe (d)fourth problem calculates the price of a "
+                            "product after a certain amount of years"<<endl;
+                    cout<<"\nThe (e)fifth problem calculates the distances "
+                            "traveled after a certain amount of time."<<endl;
+                    cout<<"\nThe (f)sixth problem calculates the salary of x "
+                            "days if the pay is in pennies."<<endl;
                     cout<<"\nThe (g)seventh problem calculates time from "
                             "seconds."<<endl;
                     cout<<"\nThe (h)eighth problem is a simple math "
