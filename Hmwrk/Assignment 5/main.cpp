@@ -34,7 +34,7 @@ int main(int argc, char** argv) {
                     cin>>one;
                     if(one>0){
                         for(int i=1; i<=one;i++){
-                            ans+=i;
+                            ans+=i;//uses the increment i to sum all the numbers
                         }
                         cout<<"The sum of that number is "<<ans<<"\n"<<endl;
                     }
@@ -82,7 +82,7 @@ int main(int argc, char** argv) {
                     cin>>time;
                     cout<<"Hour    Distance Traveled\n~~~~~~~~~~~~~~~~~~~~~~"
                             "~~~~~~~~"<<endl;
-                    for(int i=1;i<=time;i++){
+                    for(int i=1;i<=time;i++){//this for loop just displays the outputs
                         cout<<"  "<<i<<"         "<<i*speed<<endl;
                     }
                     
@@ -96,8 +96,8 @@ int main(int argc, char** argv) {
                     cin>>days;
                     cout<<"Day's Salary    Total Salary\n~~~~~~~~~~~~~~~~~~~~~~"
                             "~~~~~~~~"<<endl;
-                    cout << setprecision(2) << fixed;
-                    for(int i= 1; i<=days; i++){
+                    cout << setprecision(2) << fixed;//this allows us to format in pennies
+                    for(int i= 1; i<=days; i++){//this for loop just displays the outputs
                         total+=i;
                         cout<<"      "<<i/100.0<<"         "<<total/100.0<<endl;
                     }
@@ -105,15 +105,14 @@ int main(int argc, char** argv) {
                 }
             case 'G':
                 case 'g':{
-                   float seconds;
-                   char nChoice;
+                    char nChoice;//this is the new choice for the nested switch
                     cout<<"\nPlease enter a choice:"<<endl;
                     cout<<" a)Addition"<<endl;
                     cout<<" b)Subtraction"<<endl;
                     cout<<" c)Multiplication"<<endl;
                     cout<<" d)Division"<<endl;
                     cin>>nChoice;
-                    switch(nChoice){
+                    switch(nChoice){//switch statement for second choice
                         case 'A':
                         case 'a':{//addition problem
                             unsigned seed = time(0);//gets the system time
@@ -250,7 +249,7 @@ int main(int argc, char** argv) {
 
                     do{
                         
-                        cout<<"\nGuess the number"<<endl;
+                        cout<<"\nGuess the number(1-999):"<<endl;
                         cin>>guess;
                         if(guess>ans)
                             cout<<"\nToo high!"<<endl;
@@ -278,7 +277,7 @@ int main(int argc, char** argv) {
 
                     do{
                         
-                        cout<<"\nGuess the number:"<<endl;
+                        cout<<"\nGuess the number(1-999):"<<endl;
                         cin>>guess;
                         if(guess>ans){
                             cout<<"\nToo high!"<<endl;
@@ -303,12 +302,12 @@ int main(int argc, char** argv) {
                     for(int i = 1; i <= square; i++)
                     {
                         //cout<<"x"<<endl;
-                        cout<<endl;
-                        for(int j = 1; j <= square; j++)
+                        cout<<endl;//this will shift the loop down one line
+                        for(int j = 1; j <= square; j++)//this loop prints the horizontal lines
                             cout<<"x";
                         
                     }
-                    cout<<"\n"<<endl;
+                    cout<<"\n"<<endl;//this just adds a line so it looks cleaner
                     break;
                 }
             case 'K':
@@ -320,8 +319,8 @@ int main(int argc, char** argv) {
                         cout<<"How many rooms are there?, and how many of those"
                                 " rooms are occupied?"<<endl;
                         cin>>tRoom>>tOccupy;
-                        room+=tRoom;
-                        occupy+=tOccupy;
+                        room+=tRoom;//these loops will just add the temp variable to the normal variable
+                        occupy+=tOccupy;//these loops will just add the temp variable to the normal variable
                     }
                     cout<<"The hotel has "<<room<<" room(s)."<<endl;
                     cout<<"The hotel has "<<occupy<<" occupied room(s)."<<endl;
@@ -342,16 +341,16 @@ int main(int argc, char** argv) {
                             "traveled after a certain amount of time."<<endl;
                     cout<<"\nThe (f)sixth problem calculates the salary of x "
                             "days if the pay is in pennies."<<endl;
-                    cout<<"\nThe (g)seventh problem calculates time from "
-                            "seconds."<<endl;
-                    cout<<"\nThe (h)eighth problem is a simple math "
+                    cout<<"\nThe (g)seventh problem is a more advanced math "
                             "tutor."<<endl;
-                    cout<<"\nThe (i)ninth problem calculates the price of a "
-                            "software order."<<endl;
-                    cout<<"\nThe (j)tenth problem calculates book club "
-                            "points."<<endl;
-                    cout<<"\nThe (k)eleventh problem calculates charges for a "
-                            "shipping company.\n"<<endl;
+                    cout<<"\nThe (h)eighth problem is a random number "
+                            "game."<<endl;
+                    cout<<"\nThe (i)ninth problem is an advanced random number "
+                            "game."<<endl;
+                    cout<<"\nThe (j)tenth problem displays a square of given "
+                            "dimensions."<<endl;
+                    cout<<"\nThe (k)eleventh problem calculates the occupancy "
+                            "of a hotel.\n"<<endl;
                     break;
                 }
                 default:{
