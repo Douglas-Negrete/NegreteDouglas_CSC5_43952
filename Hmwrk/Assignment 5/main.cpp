@@ -13,6 +13,13 @@
 #include <iomanip>//allows us to format the output
 using namespace std;
 
+//user libraries
+
+//global variables
+
+//function prototypes
+
+//execution begins here
 int main(int argc, char** argv) {
     //General Menu Format
     bool loop=true;
@@ -29,11 +36,11 @@ int main(int argc, char** argv) {
         switch(choice){
             case 'A':
                 case 'a':{
-                    float one,ans;
+                    float one=0,ans=0;
                     cout<<"\nPlease enter a number:"<<endl;
                     cin>>one;
                     if(one>0){
-                        for(int i=1; i<=one;i++){
+                        for(int i=1; i<=one; i++){
                             ans+=i;//uses the increment i to sum all the numbers
                         }
                         cout<<"The sum of that number is "<<ans<<"\n"<<endl;
@@ -44,7 +51,7 @@ int main(int argc, char** argv) {
                 }
             case 'B':
                 case 'b':{
-                    float num,ocean;
+                    float num=0,ocean=0;
                     cout<<"\nPlease enter a number of years: "<<endl;
                     cin>>num;
                     ocean=num*1.5;
@@ -66,16 +73,18 @@ int main(int argc, char** argv) {
             case 'D':
                 case 'd':{
                     float price=2500;
+                    cout<<endl;
                     for(int i=1;i<=6;i++){
                         price+=price*0.04;
                         cout<<"After "<<i<<" year(s), the price will increase "
                                 "to "<< price <<endl;
                     }
+                    cout<<endl;
                     break;
                 }
             case 'E':
                 case 'e':{
-                    float speed,time;
+                    float speed=0,time=0;
                     cout<<"How fast is your car moving?(mph)"<<endl;
                     cin>>speed;
                     cout<<"How many hours have you been driving?"<<endl;
@@ -198,7 +207,7 @@ int main(int argc, char** argv) {
                             break;
                         }
                         case 'D':
-                        case 'd':{//subtraction
+                        case 'd':{//division
                             unsigned seed = time(0);//gets the system time
                             srand(seed);//seed the random number generator
 
