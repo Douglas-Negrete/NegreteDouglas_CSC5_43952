@@ -322,19 +322,30 @@ int main(int argc, char** argv) {
             case 'K':
                 case 'k':{
                     float floors,room,occupy,tRoom,tOccupy;
-                    cout<<"How many floors does the hotel have?"<<endl;
+                    bool c = true;
+                    cout<<"\nHow many floors does the hotel have?"<<endl;
                     cin>>floors;
                     for(int i = 1; i <=floors; i++){
+                        if(i=13){
+                         i++;   
+                        }    
                         cout<<"How many rooms are there?, and how many of those"
                                 " rooms are occupied?"<<endl;
                         cin>>tRoom>>tOccupy;
+                        if(tRoom<0||tOccupy>tRoom||tOccupy<0){
+                            cout<<"\nThat was an invalid input!\n"<<endl;
+                            break;
+                            c = false;
+                        }
                         room+=tRoom;//these loops will just add the temp variable to the normal variable
                         occupy+=tOccupy;//these loops will just add the temp variable to the normal variable
                     }
+                    if(c==false){
                     cout<<"The hotel has "<<room<<" room(s)."<<endl;
                     cout<<"The hotel has "<<occupy<<" occupied room(s)."<<endl;
                     cout<<"The hotel has "<<room-occupy<<" empty room(s)."<<endl;
                     cout<<"The hotel is "<<(occupy/room)*100<<"% full."<<endl;
+                    }
                     break;
                 }
             case 'X':
