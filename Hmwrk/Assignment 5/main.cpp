@@ -30,7 +30,7 @@ int main(int argc, char** argv) {
         cout<<"Type anything else to quit with no solutions.\n"<<endl;
         //Read the choice
         char choice;
-        cin>>choice;
+        choice = cin.get();
         //cout<<"\n"<<endl;
         //Solve a problem that has been chosen.
         switch(choice){
