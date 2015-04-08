@@ -12,6 +12,7 @@
 #include <fstream>
 #include <cstdlib>
 #include <ctime>
+#include <string.h>
 using namespace std;
 
 //User Libraries
@@ -22,9 +23,9 @@ using namespace std;
 float problem1(float x, float y);
 float problem2(float t);
 short problem3();
-void problem4();
-//void problem5();
-//void problem6();
+void isPrime(int n);
+float celsius(float f);
+void RPSGame();
 //void problem7();
 //void problem8();
 //void problem9();
@@ -39,8 +40,8 @@ int main(int argc, char** argv) {
     do{
         //General Menu Format
         //Display the selection
-        cout<<"Type any letter from 'a-j' to solve a problem"<<endl;
-        cout<<"Type anything else to quit with no solutions."<<endl;
+        cout<<"\nType any letter from 'a-j' to solve a problem"<<endl;
+        cout<<"Type anything else to quit with no solutions.\n"<<endl;
         //Read the choice
         cin>>choice;
         //Solve a problem that has been chosen.
@@ -48,12 +49,17 @@ int main(int argc, char** argv) {
             case 'A':
                 case 'a':{
                     float x=0.0, y=0.0;
-                    cout<<"Please input how much an item's wholesale cost is:"<<endl;
+                    cout<<"\nPlease input how much an item's wholesale cost is:"<<endl;
                     cin>>x;
                     cout<<"Please input how much an item's markup percentage is:"<<endl;
                     cin>>y;
-                    cout << fixed << showpoint << setprecision(2);
-                    cout<<"Your item costs "<<problem1(x,y)<<endl;
+                    if(x<0||y<0){
+                        cout<<"There can't be any negative numbers.\n"<<endl;
+                    }
+                    else{
+                        cout << fixed << showpoint << setprecision(2);
+                        cout<<"Your item costs "<<problem1(x,y)<<"\n"<<endl;
+                    }
                     break;
                 }
             case 'B':
@@ -79,11 +85,23 @@ int main(int argc, char** argv) {
                     break;
                 }
             case 'D':
-                case 'd':problem4();break;
-//            case 'E':
-//                case 'e':problem5();break;
-//            case 'F':
-//                case 'f':problem6();break;
+                case 'd':{
+                    int num = 0;
+                    cout<<"\nWhat number are we testing?"<<endl;
+                    cin>>num;
+                    isPrime(num);
+                    break;
+                }
+            case 'E':
+                case 'e':{
+                    float temp;
+                    cout<<"\nWhat is the temperature in Fahrenheit?"<<endl;
+                    cin>>temp;
+                    cout<<"The temperature in Celsius is "<<celsius(temp)<<"\n"<<endl;
+                    break;
+                }
+            case 'F':
+                case 'f':RPSGame();break;
 //            case 'G':
 //                case 'g':problem7();break;
 //            case 'H':
@@ -108,7 +126,7 @@ float problem1(float x,float y){
     return x+(x*p);
 }
 float problem2(float t){
-    return (1.0/2)*9.8*(t/60.0)*(t/60.0);
+    return (1.0f/2)*9.8f*(t/60.0f)*(t/60.0f);
 }
 short problem3(){
 //    unsigned seed = time(0);//gets the system time
@@ -121,52 +139,64 @@ short problem3(){
     
     return num;
 }    
-void problem4(){
-    //Declare Variables
-    ofstream out;//Output the results in a file
-    float vwdHrs;//Hours viewed (hrs)
-    char package;//Package AaBbCc
-    const int SIZE=40;//Max size of name = 39 characters
-    char name[SIZE];//Customer Name
-    float bill;//Cable Bill in $'s
-    //Open the file
-    out.open("Cable.dat");
-    //Prompt the user for inputs
-    cout<<"How many hours did you view this month?"<<endl;
-    cin>>vwdHrs;
-    cout<<"What is your package A,B,C"<<endl;
-    cin>>package;
-    cout<<"What is the customers name?"<<endl;
-    cin.ignore();
-    cin.getline(name,SIZE);
-    //Calculate the paycheck
-    switch(package){
-        case 'A':
-        case 'a':{
-            bill=9.95;
-            if(vwdHrs>10)bill+=2*(vwdHrs-10);
-            break;
+
+void isPrime(int n){
+    bool chk = false;
+    for(int i = 0; i<n; i++){
+        for(int j = 0; j<n; j++){
+            
+            if(i*j==n){
+                cout<<n<<" is not a prime number, "<<i<<" * "<<j<<" = "<<n<<endl;
+                chk = true;
+            }
+            
         }
-        case 'B':
-        case 'b':{
-            bill=14.95;
-            if(vwdHrs>20)bill+=(vwdHrs-20);
-            break;
-        }
-        case 'C':
-        case 'c':{
-            bill=19.95;
-            break;
-        }
-        default:  cout<<"Wrong Package Chosen"<<endl;
-    };
-    //Output the results to the file
-    out<<fixed<<setprecision(2)<<showpoint;
-    out<<"Your Cable Bill From CSC5 RCC Programming Class"<<endl;
-    out<<"Customer Name: "<<name<<endl;
-    out<<"Package: "<<package<<endl;
-    out<<"Hours Viewed: "<<vwdHrs<<endl;
-    out<<"Amount Owed: $"<<bill<<endl;
-    //Close the file
-    out.close();
+    }
+    if(chk==false) cout<<"This is a prime number."<<endl;
+}
+
+float celsius(float f){
+    float c=0;
+    c=(5/9.0f)*(f-32);
+    return c;
+}
+
+void RPSGame(){
+    const int SIZE=80;
+    char choice[SIZE];
+    short min, max, num,num2;
+    min = 1;
+    max = 3;
+    num = (rand()%(max-min+1))+min;
+    cout<<"What would you like to pick?(rock,paper,scissors)"<<endl;
+    cin>>choice;
+    if(strcmp(choice,"rock")==0){
+        num2=1;
+    }else if(strcmp(choice,"paper")==0){
+        num2=2;
+    }else if(strcmp(choice,"scissors")==0){
+        num2=3;
+    }else{
+        cout<<"That is not a choice."<<endl;
+        return;
+    }
+    if(num==1&&num2==3)cout<<"Computer wins!"<<endl;
+    else if(num==1&&num2==2)cout<<"You win!"<<endl;
+    else if(num==1&&num2==1)RPSGame();
+    else if(num==2&&num2==1)cout<<"You win!"<<endl;
+    else if(num==2&&num2==3)cout<<"Computer wins!"<<endl;
+    else if(num==2&&num2==2)RPSGame();
+    else if(num==3&&num2==1)cout<<"You win!"<<endl;
+    else if(num==3&&num2==2)cout<<"Computer wins!"<<endl;
+    else if(num==3&&num2==3)RPSGame();
+}
+
+void paint(){
+    float feet,price,hours;
+    cout<<"How many square feet do you want to be painted?"<<endl;
+    cin>>feet;
+    cout<<"How much does the paint cost, per gallon?"<<endl;
+    cin>>price;
+    hours = 
+    
 }
