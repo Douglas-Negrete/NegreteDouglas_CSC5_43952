@@ -9,19 +9,19 @@ CND_DISTDIR=dist
 # Debug configuration
 CND_PLATFORM_Debug=GNU-Linux-x86
 CND_ARTIFACT_DIR_Debug=dist/Debug/GNU-Linux-x86
-CND_ARTIFACT_NAME_Debug=menufunctions
-CND_ARTIFACT_PATH_Debug=dist/Debug/GNU-Linux-x86/menufunctions
+CND_ARTIFACT_NAME_Debug=crapsv2
+CND_ARTIFACT_PATH_Debug=dist/Debug/GNU-Linux-x86/crapsv2
 CND_PACKAGE_DIR_Debug=dist/Debug/GNU-Linux-x86/package
-CND_PACKAGE_NAME_Debug=menufunctions.tar
-CND_PACKAGE_PATH_Debug=dist/Debug/GNU-Linux-x86/package/menufunctions.tar
+CND_PACKAGE_NAME_Debug=crapsv2.tar
+CND_PACKAGE_PATH_Debug=dist/Debug/GNU-Linux-x86/package/crapsv2.tar
 # Release configuration
-CND_PLATFORM_Release=Cygwin_4.x-Windows
-CND_ARTIFACT_DIR_Release=dist/Release/Cygwin_4.x-Windows
-CND_ARTIFACT_NAME_Release=menufunctions
-CND_ARTIFACT_PATH_Release=dist/Release/Cygwin_4.x-Windows/menufunctions
-CND_PACKAGE_DIR_Release=dist/Release/Cygwin_4.x-Windows/package
-CND_PACKAGE_NAME_Release=menufunctions.tar
-CND_PACKAGE_PATH_Release=dist/Release/Cygwin_4.x-Windows/package/menufunctions.tar
+CND_PLATFORM_Release=GNU-Linux-x86
+CND_ARTIFACT_DIR_Release=dist/Release/GNU-Linux-x86
+CND_ARTIFACT_NAME_Release=crapsv2
+CND_ARTIFACT_PATH_Release=dist/Release/GNU-Linux-x86/crapsv2
+CND_PACKAGE_DIR_Release=dist/Release/GNU-Linux-x86/package
+CND_PACKAGE_NAME_Release=crapsv2.tar
+CND_PACKAGE_PATH_Release=dist/Release/GNU-Linux-x86/package/crapsv2.tar
 #
 # include compiler specific variables
 #
