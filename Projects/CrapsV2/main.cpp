@@ -32,8 +32,8 @@ int main(int argc, char** argv) {
 
 int craps(){
     //declare variable
-    float bet=0,account=0,newBet=0,dpBar=0,field=0;
-    int thwGame=0,maxNThw=0,nThrows=0,totGame=0;
+    float bet=0,account=0,newBet=0,dpBar=0,field=0,cB=0;
+    int thwGame=0,maxNThw=0,nThrows=0,totGame=0,NcB=0;;
     bool lose = false,loop=true, puck=false;//if puck is false, it means that it
                                             //is off, if it is true, then it is on
     char choice;
@@ -51,10 +51,10 @@ int craps(){
         if(puck==false){
             cout<<"\nDo you want to place a bet on the 'Don't pass bar'?(y/n)"<<endl;
                 cin>>choice;
-                cout;
                 if((choice == 'y')){
+                    cout<<"How much?"<<endl;
                     cin>>dpBar;
-                    if(dpBar>account){
+                    if(dpBar>(account-bet)){
                         cout<<"You can't bet more than you have in your account."<<endl;
                         return 0;
                     }
@@ -101,8 +101,24 @@ int craps(){
                 cin>>choice;
                 cout;
                 if((choice == 'y')){
+                    cout<<"How much?"<<endl;
                     cin>>field;
-                    if(field>account){
+                    if(field>(account-dpBar-bet)){
+                        cout<<"You can't bet more than you have in your account."<<endl;
+                        return 0;
+                    }
+                    choice=' ';
+                }
+                else if((choice == 'n')){
+                    choice=' ';
+                }
+                cout<<"\nDo you want to place a bet on the 'come field'?(y/n)"<<endl;
+                cin>>choice;
+                cout;
+                if((choice == 'y')){
+                    cout<<"How much?"<<endl;
+                    cin>>cB;
+                    if(cB>(account-dpBar-bet-field)){
                         cout<<"You can't bet more than you have in your account."<<endl;
                         return 0;
                     }
@@ -112,10 +128,11 @@ int craps(){
                     choice=' ';
                 }
                 do{//if you do not win or lose right away, you go into this loop
-                    cout<<"\nDo you want to place another bet?(y/n)"<<endl;
+                    cout<<"\nDo you want to place another pass line bet?(y/n)"<<endl;
                     cin>>choice;
                     cout;
                     if((choice == 'y')){
+                        cout<<"How much?"<<endl;
                         cin>>newBet;
                         bet+=newBet;
                         newBet=0;
@@ -137,6 +154,28 @@ int craps(){
                         cout<<"\nYou won 2*("<<field<<") in the field."<<endl;
                         account+=field*2;
                     }
+                    
+                    if(cB>0 && (sum2==2||sum2==3||sum2==12)){
+                        //this are checking the come field bets (2,3,12)
+                        cout<<"\nYou lost the come bet."<<endl;
+                        account-=cB;
+                        cB=0;
+                    }
+                    else if(cB>0 && (sum2==7||sum2==11)){//this are checking the come field bets (7,11)
+                        cout<<"\nYou won in the come bet."<<endl;
+                        account+=cB;
+                        cB=0;
+                    }
+                    else{
+                        NcB=sum2;
+                    }
+                    
+                    if(nThrows>2 && sum2==NcB){
+                        cout<<"\nYou won the come bet."<<endl;
+                        account+=cB;
+                        cB=0;
+                    }
+                    
                     if(sum2==point){//if this is true you won the game
                         cout<<"You won the 'Pass Line'!\n"<<endl;
                         field=0;
