@@ -170,7 +170,7 @@ int craps(){
                         NcB=sum2;
                     }
                     
-                    if(nThrows>2 && sum2==NcB){
+                    if(cB>0 && nThrows>2 && sum2==NcB){
                         cout<<"\nYou won the come bet."<<endl;
                         account+=cB;
                         cB=0;
