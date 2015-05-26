@@ -1,0 +1,11 @@
+You put $3000 in your account
+This is the receipt for game 1
+You bet 20 on the pass line
+You bet 20 on the Don't Pass Bar
+You won 20 on the pass line
+You lost 20 on the Don't Pass Bar
+Your account total after this game is 3000
+This is the receipt for game 2
+You bet 20 on the pass line
+You won 20 on the pass line
+Your account total after this game is 3020
